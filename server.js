@@ -46,12 +46,6 @@ app.get("*", (req, res) => {
   //  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
-app.get('/', async function(req, res) {
-   res.json({
-      message: 'SUCCESS'
-   })
-});
-
 // SERVER
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
