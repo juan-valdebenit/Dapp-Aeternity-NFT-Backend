@@ -38,7 +38,7 @@ const collectionTemplateEditionData = require('../nfts/collection_templates.json
     const deployment = await contract.init(
         collectionTemplateEditionData.name,
         collectionTemplateEditionData.symbol,
-        8
+        1000
     );
     console.log(`Contract successfully deployed!`);
     console.log(`Contract address: ${deployment.address}`);
