@@ -9,7 +9,6 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import compress from "compression";
 import helmet from "helmet";
-
 import Mint from "./routes/api/mint.js";
 import { run } from "./scripts/createKeypairAndFundAccount.js";
 
