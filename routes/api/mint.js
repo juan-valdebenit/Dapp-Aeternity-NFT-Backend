@@ -1,8 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
+
 import deployAndMintCollectionUniqueNFTs from "../../scripts/deployAndMintCollectionUniqueNFTs.js";
 import { deployment } from "../../scripts/deployAndMintCollectionUniqueNFTs.js";
-import { keypair } from "../../scripts/createKeypairAndFundAccount.js";
 
 dotenv.config();
 
@@ -18,16 +18,14 @@ router.post("/mint", async (req, res) => {
     let immutableMetadataUrls = hashKeys.map((key) => `ipfs://${key}`);
 
     collectionUniqueMetadata = {
-      name: "BoomStatsAnalysis",
-      symbol: "BSA",
+      name: "Apes stepping into the Metaverse - (Unique Version)",
+      symbol: "ASITM-U",
       immutable_metadata_urls: immutableMetadataUrls,
     };
 
     await deployAndMintCollectionUniqueNFTs();
 
-    res
-      .status(200)
-      .json({ contractAddress: deployment.address, deployerAddress: "123" });
+    res.status(200).json({ contractAddress: deployment.address });
   } catch (err) {
     console.log(err);
     res.status(503).json({ result: "server error" });

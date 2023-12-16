@@ -1,10 +1,10 @@
 /* eslint no-param-reassign: 0 */
-const data = require("../data.json");
+const data = require('../data.json');
 
-module.exports = (type) => {
+module.exports = type => {
   return (req, res, next, value) => {
     const typePlural = `${type}s`;
-    const obj = data[typePlural].find((t) => t.id === value * 1);
+    const obj = data[typePlural].find(t => t.id === (value * 1));
 
     if (obj) {
       req[type] = obj;

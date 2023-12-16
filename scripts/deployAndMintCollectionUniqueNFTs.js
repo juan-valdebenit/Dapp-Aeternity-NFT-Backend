@@ -42,7 +42,7 @@ const deployAndMintCollectionUniqueNFTs = async () => {
   deployment = await contract.init(
     collectionUniqueMetadata.name,
     collectionUniqueMetadata.symbol,
-    1000
+    8
   );
   console.log(`Contract successfully deployed!`);
   console.log(`Contract address: ${deployment.address}`);
